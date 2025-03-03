@@ -2,55 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hotel_booking_app/core/theme/app_colors.dart';
 
 abstract class AppTheme {
-  // static final theme = ThemeData(
-  //   useMaterial3: true,
-  //   fontFamily: 'Poppins-Regular',
-  //   colorScheme: const ColorScheme.light(),
-  //   scaffoldBackgroundColor: AppColors.white,
-  //   // navigationBarTheme: NavigationBarThemeData(
-  //   //   height: 56,
-  //   //   labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-  //   //   labelTextStyle: WidgetStatePropertyAll(TextStyle(fontSize: 16)),
-  //   //   // backgroundColor: AppColors.darkBlue,
-  //   //   indicatorColor: AppColors.grey,
-  //   //   iconTheme: WidgetStatePropertyAll(IconThemeData(color: AppColors.grey)),
-  //   // ),
-  //   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-  //     // selectedIconTheme: IconThemeData(color: AppColors.grey),
-  //     selectedItemColor: AppColors.grey,
-  //     unselectedItemColor: AppColors.grey,
-  //     selectedLabelStyle: TextStyle(color: AppColors.grey),
-  //     unselectedLabelStyle: TextStyle(color: AppColors.grey),
-  //     showUnselectedLabels: true,
-  //     showSelectedLabels: true,
-  //     type: BottomNavigationBarType.fixed,
-  //   ),
-  //   textButtonTheme: TextButtonThemeData(
-  //     // style: ButtonStyle(
-  //     //   foregroundColor: WidgetStateProperty.resolveWith<Color>((states) {
-  //     //     if (states.contains(WidgetState.disabled)) {
-  //     //       return AppColors.white.withOpacity(0.3);
-  //     //     }
-  //     //     return AppColors.white;
-  //     //   }),
-  //     //   splashFactory: NoSplash.splashFactory,
-  //     //   textStyle: const WidgetStatePropertyAll(AppFonts.button1),
-  //     //   padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 32, vertical: 12)),
-  //     //   backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
-  //     //     if (states.contains(WidgetState.disabled)) {
-  //     //       return AppColors.grey.dark;
-  //     //     } else if (states.contains(WidgetState.pressed)) {
-  //     //       return AppColors.orange.normalActive;
-  //     //     }
-  //     //     return AppColors.orange.normal;
-  //     //   }),
-  //     // ),
-  //   ),
-  //   primaryColor: AppColors.primary,
-  //   appBarTheme: AppBarTheme(backgroundColor: AppColors.darkBlue, titleTextStyle: TextStyle(color: AppColors.darkBlue)),
-  // );
-
-  static final ThemeData hotelAppTheme = ThemeData(
+  static final ThemeData theme = ThemeData(
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: AppColors.grey,
       unselectedItemColor: AppColors.grey,

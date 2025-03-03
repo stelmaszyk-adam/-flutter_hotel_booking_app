@@ -11,7 +11,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final _router = AppRouter();
     return MaterialApp.router(
-      theme: AppTheme.hotelAppTheme,
+      theme: AppTheme.theme,
       debugShowCheckedModeBanner: false,
       routerConfig: _router.config(),
       localizationsDelegates: [
