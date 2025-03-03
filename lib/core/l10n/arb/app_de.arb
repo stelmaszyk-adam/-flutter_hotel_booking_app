@@ -1,0 +1,20 @@
+{
+"@@locale": "de",
+"overview": "Überblick",
+"search": "Suche",
+"favor": "Favoriten",
+"account": "Konto",
+"errorText": "Error occure try again",
+"tryAgain": "Try again",
+"overviewTitle": "Hotels für Mallorca",
+"overviewButton": "Zu den Angeboten",
+"favorButton": "Zum Hotel",
+"day": "Tage",
+"nights": "Nächte",
+"adult": "Erw.",
+"children": "Kinder",
+"isFlight": "inkl. Flug",
+"perPerson": "€ p.P.",
+"reviewsCount": "Bew.",
+"hotels": "Hotels"
+}
