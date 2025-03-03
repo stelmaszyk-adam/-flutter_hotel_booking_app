@@ -135,7 +135,6 @@ class Rooms {
 
 @JsonSerializable()
 class RoomOverall {
-  // List<Attribute>? attributes;
   String? boarding;
   String? name;
   @JsonKey(name: 'adult-count')
@@ -148,7 +147,6 @@ class RoomOverall {
   bool? sameRoomGroups;
 
   RoomOverall({
-    // this.attributes,
     this.boarding,
     this.name,
     this.adultCount,
@@ -187,7 +185,6 @@ class PricesAndOccupancy {
 
 @JsonSerializable()
 class RoomGroup {
-  // List<Attribute>? attributes;
   String? boarding;
   String? name;
   String? detailedDescription;
