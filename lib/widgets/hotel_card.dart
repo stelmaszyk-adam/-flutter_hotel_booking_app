@@ -4,6 +4,9 @@ import 'package:hotel_booking_app/core/l10n/l10n.dart';
 import 'package:hotel_booking_app/core/theme/app_colors.dart';
 import 'package:hotel_booking_app/core/theme/app_theme_extention.dart';
 
+const _rateValue = 5.0;
+const _numberOfStars = 5;
+
 class HotelCard extends StatelessWidget {
   const HotelCard({
     this.thumbnailImage,
@@ -59,6 +62,18 @@ class HotelCard extends StatelessWidget {
   bool get _isScoreNotNull => score != null;
   bool get _isScoreDescriptionNotNull => scoreDescription != null;
 
+  bool get _isBiggerDescription => ([
+    _isDaysNotNull,
+    _isNightsNotNull,
+    _isRoomTypeNotNull,
+    _isBoardingTypeNotNull,
+    _isAdultCountNotNull,
+    _isChildrenCountNotNull,
+    _isFlightIncludedNotNull,
+    _isTotalPriceNotNull,
+    _isPricePerPersonNotNull,
+  ].any((check) => check));
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -100,24 +115,14 @@ class HotelCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    ...[for (int index = 0; index < 5; index++) Assets.icons.starPng.image(width: 20)],
+                    ...[for (int index = 0; index < _numberOfStars; index++) Assets.icons.starPng.image(width: 20)],
                     Assets.icons.helpOutlinePng.image(width: 20),
                   ],
                 ),
                 Text(name, style: context.theme.textTheme.labelMedium),
                 Text(destination, style: context.theme.textTheme.labelSmall),
                 Padding(padding: const EdgeInsets.symmetric(vertical: 16), child: Divider(color: AppColors.lightGrey)),
-                if ([
-                  _isDaysNotNull,
-                  _isNightsNotNull,
-                  _isRoomTypeNotNull,
-                  _isBoardingTypeNotNull,
-                  _isAdultCountNotNull,
-                  _isChildrenCountNotNull,
-                  _isFlightIncludedNotNull,
-                  _isTotalPriceNotNull,
-                  _isPricePerPersonNotNull,
-                ].any((check) => check)) ...[
+                if (_isBiggerDescription) ...[
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -128,7 +133,10 @@ class HotelCard extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             if (_isDaysNotNull || _isNightsNotNull)
-                              _DescriptionSingleLine(firstText: '$days ${context.l10n.day}', secondText: '$nights ${context.l10n.nights}'),
+                              _DescriptionSingleLine(
+                                firstText: '$days ${context.l10n.day}',
+                                secondText: '$nights ${context.l10n.nights}',
+                              ),
                             if (_isRoomTypeNotNull || _isBoardingTypeNotNull)
                               _DescriptionSingleLine(firstText: roomType ?? '', secondText: boardingType),
                             if (_isAdultCountNotNull || _isChildrenCountNotNull)
@@ -211,7 +219,7 @@ class _Score extends StatelessWidget {
               Icon(Icons.tag_faces_rounded, color: AppColors.white, size: 14),
               SizedBox(width: 2),
               Text(
-                '$score / 5.0',
+                '$score / $_rateValue',
                 style: context.theme.textTheme.bodySmall?.copyWith(color: AppColors.white, fontWeight: FontWeight.w700),
               ),
             ],
