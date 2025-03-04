@@ -36,7 +36,7 @@ class FavoriteTab extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               child: ListView.separated(
                 itemCount: favorHotels.length,
-                separatorBuilder: (_, _) => SizedBox(height: 14),
+                separatorBuilder: (_, __) => SizedBox(height: 14),
                 itemBuilder: (context, index) {
                   final hotel = favorHotels[index];
                   return HotelCard(

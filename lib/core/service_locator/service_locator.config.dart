@@ -21,7 +21,7 @@ import 'package:hotel_booking_app/infrastructure/hotels/remote_sources/hotels_re
     as _i210;
 import 'package:hotel_booking_app/infrastructure/hotels/repositories/hotels_impl_repository.dart'
     as _i649;
-import 'package:hotel_booking_app/screens/home/cubit/home_cubit.dart' as _i152;
+import 'package:hotel_booking_app/screens/home/cubit/home_cubit.dart' as _i464;
 import 'package:injectable/injectable.dart' as _i526;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -47,8 +47,8 @@ extension GetItInjectableX on _i174.GetIt {
         remoteSource: gh<_i210.HotelsRemoteSource>(),
       ),
     );
-    gh.factory<_i152.HomeCubit>(
-      () => _i152.HomeCubit(hotelsRepository: gh<_i750.HotelsRepository>()),
+    gh.factory<_i464.HomeCubit>(
+      () => _i464.HomeCubit(hotelsRepository: gh<_i750.HotelsRepository>()),
     );
     return this;
   }

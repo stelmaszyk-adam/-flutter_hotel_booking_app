@@ -24,7 +24,7 @@ class OverviewContainer extends StatelessWidget {
           ),
           SliverList.separated(
             itemCount: state.hotels.list.length,
-            separatorBuilder: (_, _) => SizedBox(height: 24),
+            separatorBuilder: (_, __) => SizedBox(height: 24),
             itemBuilder: (context, index) {
               final hotel = state.hotels.list[index];
               return HotelCard(
