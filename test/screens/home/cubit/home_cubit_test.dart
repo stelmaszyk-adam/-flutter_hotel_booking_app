@@ -98,11 +98,21 @@ void main() {
         await cubit.init();
         await cubit.changeStatusOfFavor('2');
       },
-      expect:
-          () => [
-            HomeLoadingState(),
-            HomeSuccessState(hotels: successHotelsList, favor: ['1', '2']),
-          ],
+      expect: () => [
+        HomeLoadingState(),
+        HomeSuccessState(hotels: successHotelsList, favor: ['1', '2']),
+      ],
+      verify: (_) {
+        verify(
+          () => mockHotelsRepository.getHotels(),
+        ).called(1);
+        verify(
+          () => mockHotelsRepository.getFavorHotels(),
+        ).called(2);
+        verify(
+          () => mockHotelsRepository.deleteFavorHotel('2'),
+        ).called(1);
+      },
     );
 
     blocTest<HomeCubit, HomeState>(
@@ -118,6 +128,17 @@ void main() {
         await cubit.changeStatusOfFavor('2');
       },
       expect: () => [HomeLoadingState(), HomeSuccessState(hotels: successHotelsList, favor: favorList)],
+      verify: (_) {
+        verify(
+          () => mockHotelsRepository.getHotels(),
+        ).called(1);
+        verify(
+          () => mockHotelsRepository.getFavorHotels(),
+        ).called(2);
+        verify(
+          () => mockHotelsRepository.setFavorHotel('2'),
+        ).called(1);
+      },
     );
   });
 }
